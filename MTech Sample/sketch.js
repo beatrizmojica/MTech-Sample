@@ -10,7 +10,6 @@ function preload(){
 }
 
 function setup(){
-  createCanvas(windowWidth,windowHeight);
   fft = new p5.FFT();
   viento.amp(0.2);
   venado.amp(0.2);
@@ -41,6 +40,7 @@ function setup(){
 }
 
 function draw(){
+  createCanvas(windowWidth,windowHeight);
   background(25);
 
    //my top 3 text
