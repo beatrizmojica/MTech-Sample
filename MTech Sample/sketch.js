@@ -1,3 +1,7 @@
+//click the song title once to play 
+//when paused, click song title again to resume from pause position
+
+
 let viento, amanece, venado, album;
 let vientobut, amanecebut, venadobut, stopbut;
 
@@ -31,6 +35,7 @@ function setup(){
   //pause
   stopbut = createButton('⏸️');
   stopbut.position(20, 220);
+
 
 // play song if button is pressed
   vientobut.mousePressed(playViento);
@@ -79,23 +84,37 @@ function draw(){
   }
 }
 
-
 function playViento() {
   console.log('vientooo');
   viento.play(0, 1, 0.25, 0.0); 
   playingVi = true
+
+  if(playingVi = true){
+    venado.pause();
+    amanece.pause();
+  }
 }
 
 function playAmanece() {
   console.log('amanece!');
   amanece.play(0, 1, 0.25, 0.0);
   playingAm = true;
+
+  if(playingAm = true){
+    viento.pause();
+    venado.pause();
+  }
 }
 
 function playVenado() {
   console.log('perdi mi ojo');
   venado.play(0, 1, 0.25, 0.0);
   playingVe = true;
+
+  if(playingVe = true){
+    viento.pause();
+    amanece.pause();
+  }
 }
 
 function pauseSound() {
